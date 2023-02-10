@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-details',
@@ -13,6 +14,7 @@ export class EmployeeDetailsComponent implements OnInit {
   employee : Employee;
 
   constructor(private employeeService : EmployeeService,
+    private route1 : Router,
     private router : ActivatedRoute
     ) {}
 
@@ -24,5 +26,9 @@ export class EmployeeDetailsComponent implements OnInit {
     });
 
   }
+
+  // showChild(){
+  //   this.route1.navigate(['child']);
+  // }
 
 }

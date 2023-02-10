@@ -7,8 +7,10 @@ import { Employee } from './employee';
   providedIn: 'root'
 })
 export class EmployeeService {
+  
 
-  private baseURL = "http://localhost:8081/employees";
+  private baseURL = "https://localhost:8445/employees";
+  private loginURL = "https://localhost:8445/login/";
 
   // Injecting HttpClient module
   constructor(private httpClient : HttpClient) { }
@@ -37,4 +39,15 @@ export class EmployeeService {
   deleteEmployee(id : number) : Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`)
   }
+
+  loginUser(employee : Employee) : Observable<Object>{
+    return this.httpClient.post(`${this.loginURL}`, employee)
+  }
+
+  // isValidUser(employee : Employee) : Observable<Employee>{
+  //   if(this.httpClient.get(`${this.loginURL}`, employee)){
+  //     return true;
+  //   }
+  //   return false
+  // }
 }

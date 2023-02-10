@@ -1,0 +1,27 @@
+
+<div class="col-md-6 offset-md-3">
+    <h3>Login</h3>
+    <form ngNativeValidate  (ngSubmit)="loginUser()">
+    
+        <div class="form-group">
+            <label>Email Id</label>
+            <input type="text" class="form-control" id="email" [(ngModel)] = "employee.email" 
+            name="email" required="required">
+        </div>
+    
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text"  class="form-control" id="pwd" [(ngModel)] = "employee.pwd" 
+            name="pwd" required="Password can't be empty">
+        </div>
+    
+    
+        <button class="btn btn-success" type="submit">Login</button>
+        
+    
+    </form>
+    </div>
+   
+
+    
+    

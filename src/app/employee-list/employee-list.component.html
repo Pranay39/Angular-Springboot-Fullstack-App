@@ -1,24 +1,29 @@
 <!-- <p>employee-list works!</p> -->
 
+
 <h3>Employee List</h3>
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email Id</th>
+            
+            <th>First Name &nbsp;<label (click)= "sortByName('firstName')">&#x21F5;</label></th>
+            <th>Last Name &nbsp;<label (click)= "sortByLastName('lastName')">&#x21F5;</label></th>
+            <th>Email Id &nbsp;<label (click)= "sortByEmail('email')">&#x21F5;</label></th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <!--  Iterating over employee peoperties from employee class -->
-        <tr *ngFor= "let employee of employees">
+        <tr  *ngFor= "let employee of employees">
             <td>{{ employee.firstName }}</td>
             <td>{{ employee.lastName }}</td>
             <td>{{ employee.email }}</td>
             <td><button (click)="updateEmployee(employee.id)" class="btn btn-info">Update</button>
-            <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+            <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" data-confirm style="margin-left: 10px;">Delete</button>
             <button (click)="viewEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px;">View</button>
         </td></tr>
 </tbody>
 </table>
+
+<router-outlet></router-outlet>
+

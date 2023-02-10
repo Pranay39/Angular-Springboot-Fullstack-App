@@ -1,23 +1,24 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <ul class="navbar-nav">
-        <li class="item">
-            <a routerLink="employees" routerLinkActive="active" class="nav-link">Employee List</a>
-        </li>
-        <li class="item">
-            <a routerLink="create-employee" routerLinkActive="active" class="nav-link">Add Employee</a>
-        </li>
-    </ul>
-</nav>
+
+<div *ngIf="isLoggedIn()">
+    <app-navbar></app-navbar>
+</div>
+
+    
 
 
-<h1 class="text-center">{{ title }}</h1>
+<h1 class="text-center"><a href="/login" style="color: rgb(239, 154, 154)">{{ title }}</a></h1>
 <div class="container">
-    <!-- <app-employee-list></app-employee-list> -->
     <router-outlet></router-outlet> 
 </div>
 
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="container">
         <span></span>
     </div>
-</footer>
+</footer> -->
+
+<div id="container">
+    <div id="header"></div>
+    <div id="body"></div>
+    <div id="footer"></div>
+ </div>

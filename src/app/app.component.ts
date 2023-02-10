@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD UI';
+  title = 'CRUD APP';
+
+  isLoggedIn(){
+    return UserLoginComponent.isLoggedIn;
+  }
+ 
 }
+  
+
